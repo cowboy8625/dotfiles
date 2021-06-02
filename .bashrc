@@ -127,11 +127,12 @@ function play_ambiences() {
         echo "Thunder Storm Two" $1;
         mpv --loop "./Music/AmbientSounds/thunder-storm-3.mp3";
     elif [ "thunder" == $1 ]; then
-        TRACKS=("1" "2" "3")
-        randArrayElement $TRACKS;
-        TRACK=$?;
-        echo "thunder-storm-$TRACK.mp3";
-        mpv "./Music/AmbientSounds/thunder-storm-$TRACK.mp3";
+        while :
+        do
+            TRACK=$(find ~/Music/AmbientSounds/*thunder* | shuf -n 1);
+            echo "Now Playing $TRACK";
+            mpv "$TRACK";
+        done
     elif [ "random" == $1 ]; then
         echo "Random Track" $1;
         mpv --loop "./Music/AmbientSounds/thunder-storm-3.mp3";

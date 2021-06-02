@@ -15,3 +15,5 @@ https://github.com/DenSA-Inc/awrevim/blob/master/src/window.rs awrevim/window.rs
 https://unicode-table.com/en/#cjk-unified-ideographs CJK Unified Ideographs — ✔️ ❤️ ★ Unicode Character Table
 https://github.com/pwaller/pyfiglet/blob/master/pyfiglet/__init__.py pyfiglet/__init__.py at master · pwaller/pyfiglet
 https://doc.rust-lang.org/rustdoc/linking-to-items-by-name.html Linking to items by name - The rustdoc book
+https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797 ANSI Escape Codes
+https://www.philippflenker.com/hecto/ Hecto: Build your own text editor in Rust – Philipp Flenker – Engineering Manager
