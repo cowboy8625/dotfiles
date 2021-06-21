@@ -157,7 +157,8 @@ function help_command() {
 
 alias ipython="ipython3 --TerminalInteractiveShell.editing_mode=vi";
 alias reload="source ~/.bashrc;echo reloaded;";
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME';
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME";
+alias mcfile="cd /home/cowboy/.var/app/com.mojang.Minecraft/data/minecraft";
 
 
 eval "$(starship init bash)"
