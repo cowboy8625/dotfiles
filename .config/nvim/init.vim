@@ -67,6 +67,7 @@ Plug 'calviken/vim-gdscript3'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tomtom/tcomment_vim'
 Plug 'kannokanno/previm'
+Plug 'chiel92/vim-autoformat'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -88,37 +89,35 @@ nmap <F7> gg=G<C-o><C-o>
 nmap <leader>rr <Plug>(coc-rename)
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
-" nmap <Up> :echo "To move up use k"<CR>
-" imap <Up> <ESC><CR>
-" nmap <Down> :echo "To move down use j"<CR>
-" imap <Down> <ESC><CR>
-" nmap <Left> :echo "To move left use h"<CR>
-" imap <Left> <ESC><CR>
-" nmap <Right> :echo "To move right use l"<CR>
-" imap <Right> <ESC><CR>
+" Reverse Visual Selection
+vnoremap ;rv c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>
+
+" Insert Data and Time
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
 
 function! s:goyo_enter()
-  silent !tmux set status off
-  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  set noshowmode
-  set noshowcmd
-  set norelativenumber
-  set nonumber
-  set scrolloff=999
-  Limelight
-  CocCommand rust-analyzer.toggleInlayHints
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    set noshowmode
+    set noshowcmd
+    set norelativenumber
+    set nonumber
+    set scrolloff=999
+    Limelight
+    CocCommand rust-analyzer.toggleInlayHints
 endfunction
 
 function! s:goyo_leave()
-  silent !tmux set status on
-  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  set showmode
-  set showcmd
-  set number
-  set relativenumber
-  set scrolloff=5
-  Limelight!
-  CocCommand rust-analyzer.toggleInlayHints
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    set showmode
+    set showcmd
+    set number
+    set relativenumber
+    set scrolloff=5
+    Limelight!
+    CocCommand rust-analyzer.toggleInlayHints
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

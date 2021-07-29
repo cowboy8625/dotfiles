@@ -1,1 +1,5 @@
+config.load_autoconfig()
 config.set("colors.webpage.darkmode.enabled", True)
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')

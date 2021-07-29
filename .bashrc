@@ -134,8 +134,14 @@ function play_ambiences() {
             mpv "$TRACK";
         done
     elif [ "random" == $1 ]; then
-        echo "Random Track" $1;
-        mpv --loop "./Music/AmbientSounds/thunder-storm-3.mp3";
+        while :
+        do
+            TRACK=$(find ~/Music/AmbientSounds/ | shuf -n 1);
+            echo "Now Playing $TRACK";
+            mpv "$TRACK";
+        done
+    elif [ "minecraft" == $1 ]; then
+        mpv "./Music/AmbientSounds/minecraft_music_rainstorm.mp3";
     else
         echo $1 " is not a Option";
     fi
@@ -150,16 +156,25 @@ function help_command() {
     echo "ipthon | ipython3 in vim mode";
     echo "reload | source .bashrc";
     echo "play_ambiences | Give args to play sound";
+    echo "               | random - Plays a random ambient sound";
+    echo "               | thunder - Plays a random thunder.";
     echo "               | thunder1";
     echo "               | thunder2";
     echo "               | thunder3";
+    echo "               | minecraft";
 }
 
 alias ipython="ipython3 --TerminalInteractiveShell.editing_mode=vi";
 alias reload="source ~/.bashrc;echo reloaded;";
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME";
 alias mcfile="cd /home/cowboy/.var/app/com.mojang.Minecraft/data/minecraft";
+alias irust="evcxr";
+alias nvim="~/Applications/nvim.appimage";
 
+
+# Set Editor
+export EDITOR='nvim';
 
 eval "$(starship init bash)"
 source "$HOME/.cargo/env"
+[ -f "/home/cowboy/.ghcup/env" ] && source "/home/cowboy/.ghcup/env" # ghcup-env
