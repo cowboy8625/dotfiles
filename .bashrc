@@ -169,7 +169,8 @@ alias reload="source ~/.bashrc;echo reloaded;";
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME";
 alias mcfile="cd /home/cowboy/.var/app/com.mojang.Minecraft/data/minecraft";
 alias irust="evcxr";
-alias nvim="~/Applications/nvim.appimage";
+alias python="python3";
+alias ls="ls -al";
 
 
 # Set Editor
@@ -177,4 +178,5 @@ export EDITOR='nvim';
 
 eval "$(starship init bash)"
 source "$HOME/.cargo/env"
+#[ -f "/home/cowboy/.ghcup/env" ] && source "/home/cowboy/.ghcup/env" # ghcup-env
 [ -f "/home/cowboy/.ghcup/env" ] && source "/home/cowboy/.ghcup/env" # ghcup-env

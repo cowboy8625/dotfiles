@@ -1,3 +1,12 @@
 {
-    "suggest.enable-preview": true
+    "suggest.enable-preview": true,
+    "languageserver": {
+  "haskell": {
+    "command": "ghcide-lsp-via-stack-exec",
+    "args": [ "" ],
+    "rootPatterns": [ "*.cabal", "cabal.config", "cabal.project", "package.yaml", "stack.yaml" ],
+    "filetypes": [ "hs", "lhs", "haskell" ],
+    "initializationOptions": { "languageServerHaskell": { "hlintOn": true }
+    }
+  }
 }

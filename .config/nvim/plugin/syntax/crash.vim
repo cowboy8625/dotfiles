@@ -7,11 +7,13 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax keyword crashKeyword let
-syntax keyword crashKeyword if else
-syntax keyword crashKeyword for while fn
-syntax keyword crashKeyword return true false
-syntax keyword crashKeyword cowboy8625
+
+" syntax keyword crashKeyword let
+" syntax keyword crashKeyword cowboy8625
+" syntax keyword crashKeyword return for while fn
+syntax keyword crashKeyword if else then
+syntax keyword crashKeyword true false
+syntax keyword crashKeyword or and
 
 syntax keyword crashFunction print
 

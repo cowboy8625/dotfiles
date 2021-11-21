@@ -2,7 +2,7 @@ if exists("b:coc_additional_keywords")
     finish
 endif
 
-syntax keyword pythonKeyword self
+syntax keyword pythonKeyword self match
 " ctermfg=128 guifg=Green
 highlight link pythonKeyword Keyword
 

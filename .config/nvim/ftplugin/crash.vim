@@ -2,7 +2,7 @@ setl relativenumber
 setl number
 set foldmethod=syntax
 setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
-" au BufNewFile,BufRead *.crash set filetype=text
+au BufNewFile,BufRead *.crash set filetype=text
 
 " nnoremap <silent> ;; :!cargo run --release<CR>
 " nnoremap <silent> ;t :!cargo test<CR>
